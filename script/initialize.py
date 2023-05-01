@@ -20,7 +20,7 @@ print(path)
 
 
 client = MongoClient(path)
-db = client['MinsaPay']
+db = client['test']
 collection = db['users']
 
 # read ./data/list.xlsx
@@ -51,5 +51,5 @@ for i in range(len(df)):
             "store": "금융정보부"
         })
 
-    # collection.insert_one(user_data)
+    collection.insert_one(user_data)
     print(user_data)
