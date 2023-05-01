@@ -7,4 +7,5 @@ export interface Store {
     password: string;
     products: Products[];
     purchases: Purchases[];
+    balance: number;
 }

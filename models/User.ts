@@ -6,6 +6,9 @@ const UserSchema = new Schema<User>({
     type: String,
     required: true,
   },
+  name: {
+    type: String,
+  },
   password: {
     type: String,
     required: true,
@@ -16,6 +19,18 @@ const UserSchema = new Schema<User>({
       ref: "Purchases",
     },
   ],
+  balance: {
+    type: Number,
+    required: true,
+  },
+  isSecurePurchase: {
+    type: Boolean,
+    required: true,
+  },
+  securePurchaseEndDate: {
+    type: Date,
+    required: false,
+  }
 });
 
 export default model<User>("User", UserSchema);

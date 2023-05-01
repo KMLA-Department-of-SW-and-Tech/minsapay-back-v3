@@ -26,6 +26,10 @@ const StoreSchema = new Schema<Store>({
       ref: "Products",
     },
   ],
+  balance: {
+    type: Number,
+    required: true,
+  }
 });
 
 export default model<Store>("Store", StoreSchema);
