@@ -2,7 +2,7 @@ import { Products } from "./Products";
 import { Purchases } from "./Purchases";
 
 export interface Store {
-    id: string;
+    username: string;
     name: string;
     password: string;
     products: Products[];

@@ -6,7 +6,11 @@ const PurchasesSchema = new Schema<Purchases>({
     type: Date,
     required: true,
   },
-  user: {
+  user: { // Save by user id
+    type: String,
+    required: true,
+  },
+  store: { // Save by store id
     type: String,
     required: true,
   },
@@ -20,10 +24,6 @@ const PurchasesSchema = new Schema<Purchases>({
   },
   total: {
     type: Number,
-    required: true,
-  },
-  store: {
-    type: String,
     required: true,
   },
 });
