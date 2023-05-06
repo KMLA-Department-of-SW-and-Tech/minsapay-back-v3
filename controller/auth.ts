@@ -2,6 +2,7 @@ import User from "../models/User";
 import { Request, Response } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import fs from "fs";
 
 // @ROUTE GET /api/auth/login
 // @DESC Login user
@@ -83,9 +84,8 @@ export const changePassword = async (req: Request, res: Response) => {
   }
 };
 
-/* 
 export const resetAllUserPassword = async (req: Request, res: Response) => {
-  const { newPassword } = req.body;
+
   try {
     const users = await User.find();
     if (!users) {
@@ -95,9 +95,16 @@ export const resetAllUserPassword = async (req: Request, res: Response) => {
       });
     }
     const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(newPassword, salt);
     users.forEach(async (user) => {
-      user.password = hashedPassword;
+      let newPassword: string = "";
+      const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      const charactersLength = characters.length;
+      for (let i = 0; i < 6; i++) {
+        newPassword += characters.charAt(Math.floor(Math.random() * charactersLength));
+      }
+      user.password = newPassword;
+      // write to csv file to ../users.csv. Contain username, password
+      fs.appendFileSync("users.csv", `${user.username},${newPassword}\n`, { encoding: "utf8" });
       await user.save();
     });
     res.status(200).json({
@@ -110,5 +117,4 @@ export const resetAllUserPassword = async (req: Request, res: Response) => {
       message: "Server Error",
     });
   }
-}; 
-*/
+};

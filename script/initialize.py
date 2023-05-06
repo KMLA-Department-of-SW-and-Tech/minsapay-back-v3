@@ -31,7 +31,7 @@ for i in range(len(df)):
     user_data = {
         "username": str(df.iloc[i, 0]),
         "name": df.iloc[i, 1],
-        "password": "1234",
+        "password": "",
         "purchases": [],
         "balance": 0,
         "isSecurePurchase": False
