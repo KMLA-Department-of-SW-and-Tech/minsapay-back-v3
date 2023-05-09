@@ -9,36 +9,38 @@ import sys
 import csv
 import json
 import time
+from tqdm import tqdm
 
 path = ""
 
-# read mongo.txt file
 with open('mongo.txt', 'r') as f:
     path = f.read()
 
-print(path)
-
-
 client = MongoClient(path)
-db = client['test']
-collection = db['users']
+db = client['MinsaPay']
+collection = db['Login']
 
-# read ./data/list.xlsx
-df = pd.read_excel('list.xlsx', sheet_name='Sheet1')
+# read ./data/userlist.csv file
+df = pd.read_csv('./script/data/userlist.csv', encoding='utf-8')
 
 # in for loop, scan each row
-for i in range(len(df)):
-    user_data = {
+for i in tqdm(range(len(df)), desc="유저 생성중", unit="명"):
+    data = {
         "username": str(df.iloc[i, 0]),
-        "name": df.iloc[i, 1],
-        "password": "",
-        "purchases": [],
-        "balance": 0,
-        "isSecurePurchase": False
+        "password": "pass",
+        "userType": "user",
+        "isAdmin": False,
+        "user": {
+            "name": df.iloc[i, 1],
+            "purchases": [],
+            "balance": 0,
+            "isSecurePurchase": False
+        }
     }
+
     if (df.iloc[i, 2] == 3):
-        user_data["balance"] = 7000
-        user_data["purchases"].append({
+        data["user"]["balance"] = 7000
+        data["user"]["purchases"].append({
             "time": time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
             "user": str(df.iloc[i, 0]),
             "product": {
@@ -51,5 +53,5 @@ for i in range(len(df)):
             "store": "금융정보부"
         })
 
-    collection.insert_one(user_data)
-    print(user_data)
+    collection.insert_one(data)
+    # print(data)

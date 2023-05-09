@@ -2,16 +2,8 @@ import { Schema, model } from "mongoose";
 import { User } from "../interface/User";
 
 const UserSchema = new Schema<User>({
-  username: {
-    type: String,
-    required: true,
-  },
   name: {
     type: String,
-  },
-  password: {
-    type: String,
-    required: true,
   },
   purchases: [
     {
@@ -30,7 +22,7 @@ const UserSchema = new Schema<User>({
   securePurchaseEndDate: {
     type: Date,
     required: false,
-  }
+  },
 });
 
-export default model<User>("User", UserSchema);
+export default model<User>("User", UserSchema, "User");

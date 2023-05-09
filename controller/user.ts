@@ -1,4 +1,4 @@
-import User from "../models/User";
+import Login from "../models/Login";
 import { Request, Response } from "express";
 import bcrypt from "bcryptjs";
 
@@ -9,7 +9,7 @@ import bcrypt from "bcryptjs";
 export const getUserById = async (req: Request, res: Response) => {
   const { id } = req.params;
   try {
-    let user = await User.findOne({
+    let user = await Login.findOne({
       username: id.toString(),
     });
     if (!user) {
@@ -36,7 +36,7 @@ export const getUserById = async (req: Request, res: Response) => {
 
 export const getAllUsers = async (req: Request, res: Response) => {
   try {
-    let users = await User.find();
+    let users = await Login.find();
     if (!users) {
       return res.status(404).json({
         success: false,

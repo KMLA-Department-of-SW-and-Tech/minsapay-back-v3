@@ -2,15 +2,7 @@ import { Schema, model } from "mongoose";
 import { Store } from "../interface/Store";
 
 const StoreSchema = new Schema<Store>({
-  username: {
-    type: String,
-    required: true,
-  },
   name: {
-    type: String,
-    required: true,
-  },
-  password: {
     type: String,
     required: true,
   },
@@ -29,7 +21,7 @@ const StoreSchema = new Schema<Store>({
   balance: {
     type: Number,
     required: true,
-  }
+  },
 });
 
-export default model<Store>("Store", StoreSchema);
+export default model<Store>("Store", StoreSchema, "Store");
