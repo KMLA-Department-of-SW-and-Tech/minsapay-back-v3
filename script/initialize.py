@@ -1,7 +1,6 @@
 from pathlib import Path
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
-# import excel file reading library
 import pandas as pd
 import numpy as np
 import os
@@ -20,10 +19,8 @@ client = MongoClient(path)
 db = client['MinsaPay']
 collection = db['Login']
 
-# read ./data/userlist.csv file
 df = pd.read_csv('./script/data/userlist.csv', encoding='utf-8')
 
-# in for loop, scan each row
 for i in tqdm(range(len(df)), desc="유저 생성중", unit="명"):
     data = {
         "username": str(df.iloc[i, 0]),
@@ -54,4 +51,3 @@ for i in tqdm(range(len(df)), desc="유저 생성중", unit="명"):
         })
 
     collection.insert_one(data)
-    # print(data)

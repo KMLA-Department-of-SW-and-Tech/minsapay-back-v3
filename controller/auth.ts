@@ -80,27 +80,28 @@ export const login = async (req: Request, res: Response) => {
 export const changePassword = async (req: Request, res: Response) => {
   const { username, newPassword } = req.body;
   try {
-    const user = await Login.findOne({
-      username: username,
-    });
-    if (!user) {
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(newPassword, salt);
+    const login = await Login.findOne({ username: username });
+    if (!login) {
       return res.status(404).json({
         success: false,
         message: "User not found",
       });
     }
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(newPassword, salt);
-    user.password = hashedPassword;
-    await user.save();
-    res.status(200).json({
+    login.password = hashedPassword;
+    console.log(login);
+    // save new login
+    await login.save();
+    return res.status(200).json({
       success: true,
-      message: "Password changed successfully",
+      message: "Password changed",
     });
-  } catch (err: Error | any) {
+  }
+  catch (err: Error | any) {
     res.status(500).json({
       success: false,
-      message: "Server Error",
+      message: err.message,
     });
   }
 };
@@ -149,17 +150,19 @@ export const createUsers = async (req: Request, res: Response) => {
 */
 
 export const resetAllUserPassword = async (req: Request, res: Response) => {
-  try {
+  /* try {
+    
     const users = await Login.find();
     if (!users) {
       return res.status(404).json({
         success: false,
         message: "No users found",
       });
-    }
-    
-    const salt = await bcrypt.genSalt(10);
+    } 
 
+    const salt = await bcrypt.genSalt(10); */
+
+  /*
     users.forEach(async (user) => {
       let newPassword: string = "";
       const characters: string =
@@ -172,41 +175,71 @@ export const resetAllUserPassword = async (req: Request, res: Response) => {
       }
       const hashedPassword: string = await bcrypt.hash(newPassword, salt);
       user.password = hashedPassword;
-      // write to csv file to ../users.csv. Contain username, password
-      /*
+      // write to csv file to ./users.csv. Contain username, password
+      // /*
       fs.appendFileSync("users.csv", `${user.username},${newPassword}\n`, {
         encoding: "utf-8",
-      }); */
+      }); */ /*
       await user.save(); 
-    });
+    });  */
+
+  // console.log(users.length);
+  /*
+
+    for (let i: number = 0; i < users.length; i++) {
+      let newPassword: string = "";
+      const characters: string = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      const charactersLength: number = characters.length;
+      for (let i: number = 0; i < 6; i++) {
+        newPassword += characters.charAt(Math.floor(Math.random() * charactersLength));
+      }
+      const hashedPassword: string = await bcrypt.hash(newPassword, salt);
+      users[i].password = hashedPassword;
+      /*fs.appendFileSync("users.csv", `${users[i].username},${newPassword}\n`, {
+        encoding: "utf-8",
+      });*/
+  /*
+      await users[i].save();
+    }
 
     return res.status(200).json({
       success: true,
       users,
     });
-  } catch (err: Error | any) {
-    res.status(500).json({
-      success: false,
-      message: "Server Error",
-    });
-  }
-};
-
-export const test = async (req: Request, res: Response) => {
+    */
   try {
     const users = await Login.find();
+    if (!users) {
+      return res.status(404).json({
+        success: false,
+        message: "No users found",
+      });
+    }
+    const salt = await bcrypt.genSalt(10);
     users.forEach(async (user) => {
-      user.password = "123456";
-    });
-    users.forEach(async (user) => {
+      let newPassword = "";
+      const characters =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+      const charactersLength = characters.length;
+      for (let i = 0; i < 6; i++) {
+        newPassword += characters.charAt(
+          Math.floor(Math.random() * charactersLength)
+        );
+      }
+      const hashedPassword = await bcrypt.hash(newPassword, salt);
+      user.password = hashedPassword;
+      // write to csv file to ../users.csv. Contain username, password
+      fs.appendFileSync("users.csv", `${user.username},${newPassword}\n`, {
+        encoding: "utf-8",
+      });
       await user.save();
     });
     res.status(200).json({
       success: true,
       users,
     });
-  } catch (err) {
-    return res.status(500).json({
+  } catch (err: Error | any) {
+    res.status(500).json({
       success: false,
       message: "Server Error",
     });
