@@ -6,6 +6,8 @@ import helmet from "helmet";
 import mongoose from "mongoose";
 import dotenv from "dotenv";
 
+import authRoutes from "./routes/auth.js";
+
 dotenv.config();
 
 const app = express();
@@ -16,6 +18,8 @@ app.use(cors());
 app.use(morgan("dev"));
 app.use(helmet());
 app.use(bodyParser.json());
+
+app.use("/api/auth", authRoutes);
 
 app.get("/", (req, res) => {
   res.send("MINSAPAY BACKEND SERVER");

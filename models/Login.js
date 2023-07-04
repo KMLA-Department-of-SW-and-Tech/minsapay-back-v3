@@ -23,4 +23,4 @@ const LoginSchema = new Schema({
   }
 });
 
-export default model("Login", LoginSchema, "Logins");
+export default model("Login", LoginSchema, "Login");
