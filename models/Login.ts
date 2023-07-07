@@ -5,6 +5,7 @@ const LoginSchema = new Schema<Login>({
   username: {
     type: String,
     required: true,
+    unique: true,
   },
   password: {
     type: String,
@@ -12,6 +13,7 @@ const LoginSchema = new Schema<Login>({
   },
   userType: {
     type: String,
+    enum: ["user", "admin", "booth"],
     required: true,
   },
   isAdmin: {

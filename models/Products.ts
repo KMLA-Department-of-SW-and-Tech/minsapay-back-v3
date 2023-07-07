@@ -1,31 +1,15 @@
 import { Schema, model } from "mongoose";
-import { Purchases } from "../interface/Purchases";
+import { Products } from "../interface/Products";
 
-const PurchasesSchema = new Schema<Purchases>({
-  time: {
-    type: Date,
-    required: true,
-  },
-  user: {
+const ProductsSchema = new Schema<Products>({
+  name: {
     type: String,
     required: true,
-  },
-  product: {
-    type: Schema.Types.ObjectId,
-    ref: "Products",
   },
   price: {
     type: Number,
     required: true,
   },
-  total: {
-    type: Number,
-    required: true,
-  },
-  store: {
-    type: String,
-    required: true,
-  },
 });
 
-export default model<Purchases>("Purchases", PurchasesSchema);
+export default model<Products>("Purchases", ProductsSchema);

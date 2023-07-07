@@ -13,9 +13,8 @@ dotenv.config();
 
 const app: Express = express();
 
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
-
-
 
 app.use(cors());
 app.use(morgan("dev"));
@@ -25,6 +24,7 @@ app.use(bodyParser.json());
 app.get("/", (req: Request, res: Response) => {
   res.send("Express + TypeScript Server");
 });
+
 const connect = async () => {
   try {
     await mongoose.connect(process.env.MONGO || "");

@@ -4,6 +4,7 @@ import { User } from "../interface/User";
 const UserSchema = new Schema<User>({
   name: {
     type: String,
+    required: true,
   },
   purchases: [
     {
@@ -21,7 +22,7 @@ const UserSchema = new Schema<User>({
   },
   securePurchaseEndDate: {
     type: Date,
-    required: false,
+    required: true,
   },
 });
 

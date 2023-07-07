@@ -3,8 +3,13 @@ import { Request, Response } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import fs from "fs";
-import "dotenv/config"
-import { generatePassword } from "../functions/generatePassword";
+import "dotenv/config";
+import { generatePassword } from "../util/generatePassword";
+// import User from "../models/User";
+import { Purchases } from "../interface/Purchases";
+import { Products } from "../interface/Products";
+import { User } from "../interface/User";
+import { Login as LoginInterface } from "../interface/Login";
 
 // @ROUTE GET /api/auth/login
 // @DESC Login user
@@ -37,6 +42,10 @@ export const login = async (req: Request, res: Response) => {
     };
     const token = jwt.sign(payload, JWT, {
       expiresIn: 360000,
+    });
+    return res.status(200).json({
+      token: token,
+      userType: login.userType,
     });
   } catch (err) {
     console.log(err);
@@ -75,28 +84,47 @@ export const changePassword = async (req: Request, res: Response) => {
 };
 
 export const createUsers = async (req: Request, res: Response) => {
-  // read first column of list.csv
-  const data = fs.readFileSync("list.csv", "utf8");
-  const dataArray = data.split(/\r?\n/);
-  const usernameArray = dataArray.map((item) => {
-    console.log(item.split(",")[0]);
-  }
-  )
-  // create users
-  for (let i = 0; i < usernameArray.length; i++) {
-    const username = usernameArray[i];
-    const password = generatePassword();
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
-    const login = new Login({
-      username: username,
-      password: hashedPassword,
-      userType: "user",
-    });
+  const csv = fs.readFileSync("./list.csv", "utf-8");
+  const lines = csv.split("\n");
 
-  }
+  const usernames = lines.map((line) => {
+    return line.split(",")[0];
+  });
+  const realNames = lines.map((line) => {
+    return line.split(",")[1];
+  });
+  const grade = lines.map((line) => {
+    return line.split(",")[2];
+  });
 
+  for (let i = 0; i < usernames.length; i++) {
+    try {
+      const password = generatePassword();
+      const salt = await bcrypt.genSalt(10);
+      const hashedPassword = await bcrypt.hash(password, salt);
+      const userData: User = {
+        name: realNames[i],
+        purchases: [],
+        balance: 0,
+        isSecurePurchase: true,
+        securePurchaseEndDate: new Date(),
+      };
+      const newUser: LoginInterface = {
+        username: usernames[i],
+        password: hashedPassword,
+        userType: "user",
+        isAdmin: false,
+        user: userData,
+      };
+      await Login.create(newUser);
+    } catch (err: Error | any) {
+      console.log(err);
+      return res.status(500).json({
+        message: "Internal server error",
+      });
+    }
+  }
   return res.status(200).json({
-    message: "Users created successfully",
-  }); 
-}
+    message: "Users Initialized Successfully",
+  });
+};
