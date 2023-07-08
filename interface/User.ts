@@ -1,8 +1,9 @@
 import { Purchases } from "./Purchases";
+import { PopulatedDoc } from "mongoose";
 
 export interface User {
   name: string;
-  purchases: Purchases[];
+  purchases: PopulatedDoc<Purchases>[];
   balance: number;
   isSecurePurchase: boolean;
   securePurchaseEndDate: Date;

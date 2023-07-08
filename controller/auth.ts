@@ -1,9 +1,9 @@
-import Login from "../models/Login";
+import { LoginModel } from "../models/Login";
 import { Request, Response } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import fs from "fs";
-import "dotenv/config";
+// import "dotenv/config";
 import { generatePassword } from "../util/generatePassword";
 // import User from "../models/User";
 import { Purchases } from "../interface/Purchases";
@@ -20,7 +20,7 @@ const JWT: string | any = process.env.JWT_SECRET;
 export const login = async (req: Request, res: Response) => {
   const { username, password } = req.body;
   try {
-    let login = await Login.findOne({
+    let login = await LoginModel.findOne({
       username: username,
     });
     if (!login) {
@@ -58,7 +58,7 @@ export const login = async (req: Request, res: Response) => {
 export const changePassword = async (req: Request, res: Response) => {
   const { username, newPassword } = req.body;
   try {
-    let login = await Login.findOne({
+    let login = await LoginModel.findOne({
       username: username,
     });
     if (!login) {
@@ -68,7 +68,7 @@ export const changePassword = async (req: Request, res: Response) => {
     }
     const salt = await bcrypt.genSalt(10);
     login.password = await bcrypt.hash(newPassword, salt);
-    await Login.findOneAndUpdate(
+    await LoginModel.findOneAndUpdate(
       { username: username },
       { password: login.password }
     );
@@ -102,21 +102,21 @@ export const createUsers = async (req: Request, res: Response) => {
       const password = generatePassword();
       const salt = await bcrypt.genSalt(10);
       const hashedPassword = await bcrypt.hash(password, salt);
-      const userData: User = {
+      let userData: User = {
         name: realNames[i],
         purchases: [],
         balance: 0,
         isSecurePurchase: true,
         securePurchaseEndDate: new Date(),
       };
-      const newUser: LoginInterface = {
+      let newUser: LoginInterface = {
         username: usernames[i],
         password: hashedPassword,
         userType: "user",
         isAdmin: false,
         user: userData,
       };
-      await Login.create(newUser);
+      await LoginModel.create(newUser);
     } catch (err: Error | any) {
       console.log(err);
       return res.status(500).json({
@@ -128,3 +128,34 @@ export const createUsers = async (req: Request, res: Response) => {
     message: "Users Initialized Successfully",
   });
 };
+
+export const createUser = async (req: Request, res: Response) => {
+  const { username, password, name, userType, isAdmin } = req.body;
+  try {
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+    let userData: User = {
+      name: name,
+      purchases: [],
+      balance: 0,
+      isSecurePurchase: true,
+      securePurchaseEndDate: new Date(),
+    };
+    let newUser: LoginInterface = {
+      username: username,
+      password: hashedPassword,
+      userType: userType,
+      isAdmin: isAdmin,
+      user: userData,
+    };
+    await LoginModel.create(newUser);
+    return res.status(200).json({
+      message: "User Created Successfully",
+    });
+  } catch (err: Error | any) {
+    console.log(err);
+    return res.status(500).json({
+      message: "Internal server error",
+    });
+  }
+}
