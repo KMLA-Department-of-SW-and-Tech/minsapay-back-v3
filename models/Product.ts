@@ -20,7 +20,7 @@ const ProductSchema = createSchema({
   price: Type.number({ required: true }),
 })
 
-const ProductsModel = typedModel("Products", ProductSchema, "Products");
+const ProductsModel = typedModel("Product", ProductSchema, "Product");
 
 type ProductsDoc = ExtractDoc<typeof ProductSchema>;
 
