@@ -1,4 +1,3 @@
-import { User } from "../interface/User";
 import { createSchema, Type, typedModel, ExtractDoc } from "ts-mongoose";
 import { PurchaseSchema } from "./Purchase";
 

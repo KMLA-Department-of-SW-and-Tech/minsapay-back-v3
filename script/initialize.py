@@ -1,12 +1,5 @@
-from pathlib import Path
 from pymongo import MongoClient
-from pymongo.server_api import ServerApi
 import pandas as pd
-import numpy as np
-import os
-import sys
-import csv
-import json
 import time
 from tqdm import tqdm
 

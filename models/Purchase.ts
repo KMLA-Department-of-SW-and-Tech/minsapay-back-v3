@@ -1,7 +1,4 @@
-import { Schema, model } from "mongoose";
-import { Purchases } from "../interface/Purchases";
 import { createSchema, Type, typedModel, ExtractDoc } from "ts-mongoose";
-import { ProductSchema } from "./Product";
 
 const PurchaseSchema = createSchema({
   time: Type.date({ required: true }),

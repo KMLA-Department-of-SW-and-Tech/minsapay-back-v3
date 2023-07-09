@@ -1,10 +1,5 @@
 import { LoginModel } from "../models/Login";
 import { Request, Response } from "express";
-import bcrypt from "bcryptjs";
-
-// @ROUTE GET /api/user/:id
-// @DESC Get user by id
-// @ACCESS Public
 
 export const getUserById = async (req: Request, res: Response) => {
   const { id } = req.params;

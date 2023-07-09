@@ -1,0 +1,1 @@
+mongodb+srv://<username>:<password>@<URI>/<DB Name>?retryWrites=true&w=majority
