@@ -1,19 +1,18 @@
-import { LoginModel } from "../models/Login";
 import { Request, Response } from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import fs from "fs";
-// import "dotenv/config";
-import { generatePassword } from "../util/generatePassword";
-// import User from "../models/User";
-import { Purchases } from "../interface/Purchases";
-import { Products } from "../interface/Products";
-import { User } from "../interface/User";
-import { Login as LoginInterface } from "../interface/Login";
 
-// @ROUTE GET /api/auth/login
-// @DESC Login user
-// @ACCESS Public
+import { User as UserInterface } from "../interface/User";
+import { Login as LoginInterface } from "../interface/Login";
+import { Store as StoreInterface } from "../interface/Store";
+
+import { LoginModel } from "../models/Login";
+import { UserModel } from "../models/User";
+import { StoreModel } from "../models/Store";
+
+import { generatePassword } from "../util/generatePassword";
+
+import "dotenv/config";
 
 const JWT: string | any = process.env.JWT_SECRET;
 
@@ -83,48 +82,104 @@ export const changePassword = async (req: Request, res: Response) => {
   }
 };
 
-export const createUsers = async (req: Request, res: Response) => {
-  const csv = fs.readFileSync("./list.csv", "utf-8");
-  const lines = csv.split("\n");
-
-  const usernames = lines.map((line) => {
-    return line.split(",")[0];
-  });
-  const realNames = lines.map((line) => {
-    return line.split(",")[1];
-  });
-  const grade = lines.map((line) => {
-    return line.split(",")[2];
-  });
-
-  for (let i = 0; i < usernames.length; i++) {
-    try {
-      const password = generatePassword();
+export const resetPassword = async (req: Request, res: Response) => {
+  try {
+    let users = await LoginModel.find({
+      userType: "user",
+    });
+    let result: Object = {}
+    for (let i = 0; i < users.length; i++) {
       const salt = await bcrypt.genSalt(10);
-      const hashedPassword = await bcrypt.hash(password, salt);
-      let userData: User = {
-        name: realNames[i],
-        purchases: [],
-        balance: 0,
-        isSecurePurchase: true,
-        securePurchaseEndDate: new Date(),
-      };
-      let newUser: LoginInterface = {
-        username: usernames[i],
-        password: hashedPassword,
-        userType: "user",
-        isAdmin: false,
-        user: userData,
-      };
-      await LoginModel.create(newUser);
-    } catch (err: Error | any) {
-      console.log(err);
-      return res.status(500).json({
-        message: "Internal server error",
-      });
+      const newPassword = generatePassword();
+      users[i].password = await bcrypt.hash(newPassword, salt);
+      await LoginModel.findOneAndUpdate(
+        { username: users[i].username },
+        { password: users[i].password }
+      );
+      result = {
+        ...result,
+        [users[i].username]: newPassword
+      }
     }
+    return res.status(200).json({
+      message: "Password changed successfully",
+      result: result
+    });
+  } catch (err: Error | any) {
+    console.log(err);
+    return res.status(500).json({
+      message: "Internal server error",
+    });
   }
-  return res.status(200).json({
-    message: "Users Initialized Successfully",
-  });
 };
+
+export const createUser = async (req: Request, res: Response) => {
+  const { username, password, userType, name } = req.body;
+  try {
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    const userData: UserInterface = {
+      name: name,
+      purchases: [],
+      balance: 0,
+      isSecurePurchase: true,
+      securePurchaseEndDate: new Date(),
+    };
+
+    const createdUser = await UserModel.create(userData);
+
+    let newUser: LoginInterface = {
+      username: username,
+      password: hashedPassword,
+      userType: userType,
+      isAdmin: false,
+      user: createdUser.id,
+    };
+    await LoginModel.create(newUser);
+    return res.status(200).json({
+      message: "User created successfully",
+    });
+  } catch (err: Error | any) {
+    console.log(err);
+    return res.status(500).json({
+      message: "Internal server error",
+    });
+  }
+};
+
+export const createStore = async (req: Request, res: Response) => {
+  const { username, password, userType, name } = req.body;
+  try {
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
+    const storeData: StoreInterface = {
+      name: name,
+      purchases: [],
+      products: [],
+      balance: 0,
+    };
+
+    const createdUser = await StoreModel.create(storeData);
+
+    let newUser: LoginInterface = {
+      username: username,
+      password: hashedPassword,
+      userType: userType,
+      isAdmin: false,
+      store: createdUser.id,
+    };
+
+    await LoginModel.create(newUser);
+    
+    return res.status(200).json({
+      message: "User created successfully",
+    });
+  } catch (err: Error | any) {
+    console.log(err);
+    return res.status(500).json({
+      message: "Internal server error",
+    });
+  }
+}
