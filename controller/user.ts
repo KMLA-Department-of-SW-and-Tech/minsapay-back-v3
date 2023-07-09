@@ -25,10 +25,6 @@ export const getUserById = async (req: Request, res: Response) => {
   }
 };
 
-// @ROUTE GET /api/user/
-// @DESC Get all users
-// @ACCESS Public
-
 export const getAllUsers = async (req: Request, res: Response) => {
   try {
     let users = await LoginModel.find();

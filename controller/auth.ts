@@ -17,26 +17,30 @@ import "dotenv/config";
 const JWT: string | any = process.env.JWT_SECRET;
 
 export const login = async (req: Request, res: Response) => {
+  if (!req.body.username || !req.body.password) {
+    return res.status(400).json({
+      message: "Malformed request syntax",
+    });
+  }
   const { username, password } = req.body;
   try {
     let login = await LoginModel.findOne({
       username: username,
     });
     if (!login) {
-      return res.status(400).json({
+      return res.status(404).json({
         message: "User not found",
       });
     }
     const isMatch = await bcrypt.compare(password, login.password);
     if (!isMatch) {
-      return res.status(400).json({
+      return res.status(401).json({
         message: "Incorrect password",
       });
     }
     const payload = {
       login: {
         id: login.id,
-        userType: login.userType,
       },
     };
     const token = jwt.sign(payload, JWT, {
@@ -56,12 +60,17 @@ export const login = async (req: Request, res: Response) => {
 
 export const changePassword = async (req: Request, res: Response) => {
   const { username, newPassword } = req.body;
+  if (!username || !newPassword) {
+    return res.status(400).json({
+      message: "Malformed request syntax",
+    });
+  }
   try {
     let login = await LoginModel.findOne({
       username: username,
     });
     if (!login) {
-      return res.status(400).json({
+      return res.status(404).json({
         message: "User not found",
       });
     }
@@ -87,7 +96,7 @@ export const resetPassword = async (req: Request, res: Response) => {
     let users = await LoginModel.find({
       userType: "user",
     });
-    let result: Object = {}
+    let result: Object = {};
     for (let i = 0; i < users.length; i++) {
       const salt = await bcrypt.genSalt(10);
       const newPassword = generatePassword();
@@ -98,12 +107,12 @@ export const resetPassword = async (req: Request, res: Response) => {
       );
       result = {
         ...result,
-        [users[i].username]: newPassword
-      }
+        [users[i].username]: newPassword,
+      };
     }
     return res.status(200).json({
       message: "Password changed successfully",
-      result: result
+      result: result,
     });
   } catch (err: Error | any) {
     console.log(err);
@@ -114,7 +123,12 @@ export const resetPassword = async (req: Request, res: Response) => {
 };
 
 export const createUser = async (req: Request, res: Response) => {
-  const { username, password, userType, name } = req.body;
+  const { username, password, name } = req.body;
+  if (!username || !password || !name) {
+    return res.status(400).json({
+      message: "Malformed request syntax",
+    });
+  }
   try {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
@@ -132,7 +146,7 @@ export const createUser = async (req: Request, res: Response) => {
     let newUser: LoginInterface = {
       username: username,
       password: hashedPassword,
-      userType: userType,
+      userType: "user",
       isAdmin: false,
       user: createdUser.id,
     };
@@ -149,7 +163,13 @@ export const createUser = async (req: Request, res: Response) => {
 };
 
 export const createStore = async (req: Request, res: Response) => {
-  const { username, password, userType, name } = req.body;
+  const { username, password, name } = req.body;
+  if (!username || !password || !name) {
+    return res.status(400).json({
+      message: "Malformed request syntax",
+    });
+  }
+  
   try {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
@@ -166,15 +186,15 @@ export const createStore = async (req: Request, res: Response) => {
     let newUser: LoginInterface = {
       username: username,
       password: hashedPassword,
-      userType: userType,
+      userType: "store",
       isAdmin: false,
       store: createdUser.id,
     };
 
     await LoginModel.create(newUser);
-    
+
     return res.status(200).json({
-      message: "User created successfully",
+      message: "Store created successfully",
     });
   } catch (err: Error | any) {
     console.log(err);
@@ -182,4 +202,4 @@ export const createStore = async (req: Request, res: Response) => {
       message: "Internal server error",
     });
   }
-}
+};
