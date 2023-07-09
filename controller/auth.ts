@@ -128,34 +128,3 @@ export const createUsers = async (req: Request, res: Response) => {
     message: "Users Initialized Successfully",
   });
 };
-
-export const createUser = async (req: Request, res: Response) => {
-  const { username, password, name, userType, isAdmin } = req.body;
-  try {
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
-    let userData: User = {
-      name: name,
-      purchases: [],
-      balance: 0,
-      isSecurePurchase: true,
-      securePurchaseEndDate: new Date(),
-    };
-    let newUser: LoginInterface = {
-      username: username,
-      password: hashedPassword,
-      userType: userType,
-      isAdmin: isAdmin,
-      user: userData,
-    };
-    await LoginModel.create(newUser);
-    return res.status(200).json({
-      message: "User Created Successfully",
-    });
-  } catch (err: Error | any) {
-    console.log(err);
-    return res.status(500).json({
-      message: "Internal server error",
-    });
-  }
-}

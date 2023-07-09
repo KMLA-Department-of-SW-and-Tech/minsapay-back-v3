@@ -3,7 +3,7 @@ import { PopulatedDoc } from "mongoose";
 
 export interface User {
   name: string;
-  purchases: PopulatedDoc<Purchases>[];
+  purchases: string[];
   balance: number;
   isSecurePurchase: boolean;
   securePurchaseEndDate: Date;
