@@ -3,7 +3,7 @@ import { PurchaseSchema } from "./Purchase";
 
 const UserSchema = createSchema({
   name: Type.string({ required: true }),
-  purchases: Type.array().of(Type.ref(Type.objectId()).to("Purchases", PurchaseSchema)),
+  purchases: Type.array().of(Type.string()),
   balance: Type.number({ required: true }),
   isSecurePurchase: Type.boolean({ required: true }),
   securePurchaseEndDate: Type.date({ required: true }),

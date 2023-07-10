@@ -12,6 +12,7 @@ client = MongoClient(path)
 db = client['MinsaPay']
 login_collection = db['Login']
 user_collection = db['User']
+purchase_collection = db['Purchase']
 
 df = pd.read_csv('./script/data/userlist.csv', encoding='utf-8')
 
@@ -35,18 +36,21 @@ for i in tqdm(range(len(df)), desc="유저 생성중", unit="명"):
 
     if (df.iloc[i, 2] == 3):
         userData["balance"] = 7000
-        userData["purchases"].append({
-            "time": time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
-            "user": str(df.iloc[i, 0]),
-            "product": {
-                "id": "1",
-                "name": "3학년 기본금액",
-                "price": 7000
-            },
-            "price": -7000,
-            "total": 7000,
-            "store": "금융정보부"
-        })
+        purchase_collection.insert_one(
+            {
+                "time": time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
+                "user": str(df.iloc[i, 0]),
+                "product": {
+                    "id": "1",
+                    "name": "3학년 기본금액",
+                    "price": 7000
+                },
+                "price": -7000,
+                "total": 7000,
+                "store": "금융정보부"
+            })
+        userData["purchases"].append(str(purchase_collection.find_one({"user": str(df.iloc[i, 0])})["_id"]))
+        
 
     user_collection.insert_one(userData)
     # retrieve inserted user _id

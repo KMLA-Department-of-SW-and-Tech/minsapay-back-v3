@@ -130,6 +130,15 @@ export const createUser = async (req: Request, res: Response) => {
     });
   }
   try {
+    let login = await LoginModel.findOne({
+      username: username,
+    });
+    if (login) {
+      return res.status(409).json({
+        message: "Username already exists",
+      });
+    }
+
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
 
@@ -169,7 +178,7 @@ export const createStore = async (req: Request, res: Response) => {
       message: "Malformed request syntax",
     });
   }
-  
+
   try {
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password, salt);
