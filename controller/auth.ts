@@ -19,6 +19,7 @@ const JWT: string | any = process.env.JWT_SECRET;
 export const login = async (req: Request, res: Response) => {
   if (!req.body.username || !req.body.password) {
     return res.status(400).json({
+      success: false,
       message: "Malformed request syntax",
     });
   }
@@ -29,12 +30,14 @@ export const login = async (req: Request, res: Response) => {
     });
     if (!login) {
       return res.status(404).json({
+        success: false,
         message: "User not found",
       });
     }
     const isMatch = await bcrypt.compare(password, login.password);
     if (!isMatch) {
       return res.status(401).json({
+        success: false,
         message: "Incorrect password",
       });
     }
@@ -49,10 +52,12 @@ export const login = async (req: Request, res: Response) => {
     return res.status(200).json({
       token: token,
       userType: login.userType,
+      success: true,
     });
   } catch (err) {
     console.log(err);
     return res.status(500).json({
+      success: false,
       message: "Internal server error",
     });
   }
@@ -62,6 +67,7 @@ export const changePassword = async (req: Request, res: Response) => {
   const { username, newPassword } = req.body;
   if (!username || !newPassword) {
     return res.status(400).json({
+      success: false,
       message: "Malformed request syntax",
     });
   }
@@ -71,6 +77,7 @@ export const changePassword = async (req: Request, res: Response) => {
     });
     if (!login) {
       return res.status(404).json({
+        success: false,
         message: "User not found",
       });
     }
@@ -81,11 +88,13 @@ export const changePassword = async (req: Request, res: Response) => {
       { password: login.password }
     );
     return res.status(200).json({
+      success: true,
       message: "Password changed successfully",
     });
   } catch (err: Error | any) {
     console.log(err);
     return res.status(500).json({
+      success: false,
       message: "Internal server error",
     });
   }
@@ -111,12 +120,14 @@ export const resetPassword = async (req: Request, res: Response) => {
       };
     }
     return res.status(200).json({
+      success: true,
       message: "Password changed successfully",
       result: result,
     });
   } catch (err: Error | any) {
     console.log(err);
     return res.status(500).json({
+      success: false,
       message: "Internal server error",
     });
   }
@@ -126,6 +137,7 @@ export const createUser = async (req: Request, res: Response) => {
   const { username, password, name } = req.body;
   if (!username || !password || !name) {
     return res.status(400).json({
+      success: false,
       message: "Malformed request syntax",
     });
   }
@@ -135,6 +147,7 @@ export const createUser = async (req: Request, res: Response) => {
     });
     if (login) {
       return res.status(409).json({
+        success: false,
         message: "Username already exists",
       });
     }
@@ -161,11 +174,13 @@ export const createUser = async (req: Request, res: Response) => {
     };
     await LoginModel.create(newUser);
     return res.status(200).json({
+      success: true,
       message: "User created successfully",
     });
   } catch (err: Error | any) {
     console.log(err);
     return res.status(500).json({
+      success: false,
       message: "Internal server error",
     });
   }
@@ -175,7 +190,17 @@ export const createStore = async (req: Request, res: Response) => {
   const { username, password, name } = req.body;
   if (!username || !password || !name) {
     return res.status(400).json({
+      success: false,
       message: "Malformed request syntax",
+    });
+  }
+  const login = await LoginModel.findOne({
+    username: username,
+  });
+  if (login) {
+    return res.status(409).json({
+      success: false,
+      message: "Username already exists",
     });
   }
 
@@ -203,11 +228,13 @@ export const createStore = async (req: Request, res: Response) => {
     await LoginModel.create(newUser);
 
     return res.status(200).json({
+      success: true,
       message: "Store created successfully",
     });
   } catch (err: Error | any) {
     console.log(err);
     return res.status(500).json({
+      success: false,
       message: "Internal server error",
     });
   }
