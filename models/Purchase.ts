@@ -6,6 +6,10 @@ const PurchaseSchema = createSchema({
   store: Type.string({ required: true }),
   product: Type.string({ required: true }),
   price: Type.number({ required: true }),
+  nameOfStore: Type.string({ required: true }),
+  nameOfUser: Type.string({ required: true }),
+  userAmount: Type.number({ required: true }),
+  storeAmount: Type.number({ required: true }),
 });
 
 const PurchaseModel = typedModel("Purchase", PurchaseSchema, "Purchase");

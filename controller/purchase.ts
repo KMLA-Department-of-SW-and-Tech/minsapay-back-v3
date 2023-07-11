@@ -8,7 +8,14 @@ import { Request, Response } from "express";
 import { generateUuid } from "../util/uuid";
 
 export const createPurchase = async (req: Request, res: Response) => {
-  if (!req.body.username || !req.body.storeName || !req.body.amount || !req.body.productName) {
+  if (
+    !req.body.username ||
+    !req.body.storeName ||
+    !req.body.amount ||
+    !req.body.productName ||
+    !req.body.nameOfStore ||
+    !req.body.nameOfUser
+  ) {
     return res.status(400).json({
       success: false,
       message: "Malformed request syntax",
@@ -64,18 +71,22 @@ export const createPurchase = async (req: Request, res: Response) => {
       });
     }
     const purchase = new PurchaseModel({
-        user: user._id,
-        store: store._id,
-        price: req.body.amount,
-        time: new Date(),
-        product: req.body.productName,
+      user: user._id,
+      store: store._id,
+      price: req.body.amount,
+      time: new Date(),
+      product: req.body.productName,
+      nameOfStore: req.body.nameOfStore,
+      nameOfUser: req.body.nameOfUser,
+      userAmount: user.balance - req.body.amount,
+      storeAmount: store.balance + req.body.amount,
     });
     await purchase.save();
 
     const newPurchaseId = purchase._id;
 
     if (!user.purchases) {
-        user.purchases = [];
+      user.purchases = [];
     }
 
     user.purchases.push(newPurchaseId);
@@ -84,7 +95,7 @@ export const createPurchase = async (req: Request, res: Response) => {
     await user.save();
 
     if (!store.purchases) {
-        store.purchases = [];
+      store.purchases = [];
     }
 
     store.purchases.push(newPurchaseId);
@@ -93,10 +104,123 @@ export const createPurchase = async (req: Request, res: Response) => {
     await store.save();
 
     return res.status(200).json({
-        success: true,
-        purchase: purchase,
+      success: true,
+      purchase: purchase,
+    });
+  } catch (err: Error | any) {
+    console.log(err);
+    return res.status(500).json({
+      success: false,
+      message: "Internal server error",
+    });
+  }
+};
+
+export const getUserPurchaseByUsername = async (
+  req: Request,
+  res: Response
+) => {
+  if (!req.params.username) {
+    return res.status(400).json({
+      success: false,
+      message: "Malformed request syntax",
+    });
+  }
+  try {
+    const account = await LoginModel.findOne({
+      username: req.params.username,
+    });
+    if (!account) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+
+    if (account.userType !== "user") {
+      return res.status(406).json({
+        success: false,
+        message: "Not a user account",
+      });
+    }
+
+    const user = await UserModel.findOne({
+      _id: account.user,
     });
 
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+    const purchases = await PurchaseModel.find({
+      _id: {
+        $in: user.purchases,
+      },
+    });
+
+    return res.status(200).json({
+      success: true,
+      purchases: purchases,
+    });
+  } catch (err: Error | any) {
+    console.log(err);
+    return res.status(500).json({
+      success: false,
+      message: "Internal server error",
+    });
+  }
+};
+
+export const getStorePurchaseByUsername = async (
+  req: Request,
+  res: Response
+) => {
+  if (!req.params.storename) {
+    return res.status(400).json({
+      success: false,
+      message: "Malformed request syntax",
+    });
+  }
+  try {
+    const account = await LoginModel.findOne({
+      username: req.params.storename,
+    });
+    if (!account) {
+      return res.status(404).json({
+        success: false,
+        message: "Store not found",
+      });
+    }
+
+    if (account.userType !== "store") {
+      return res.status(406).json({
+        success: false,
+        message: "Not a store account",
+      });
+    }
+
+    const store = await StoreModel.findOne({
+      _id: account.store,
+    });
+
+    if (!store) {
+      return res.status(404).json({
+        success: false,
+        message: "Store not found",
+      });
+    }
+    const purchases = await PurchaseModel.find({
+      _id: {
+        $in: store.purchases,
+      },
+    });
+
+    return res.status(200).json({
+      success: true,
+      purchases: purchases,
+    });
   } catch (err: Error | any) {
     console.log(err);
     return res.status(500).json({
