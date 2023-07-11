@@ -8,6 +8,8 @@ import bodyParser from "body-parser";
 
 import userRouter from "./routes/user";
 import authRouter from './routes/auth';
+import storeRouter from './routes/store';
+import purchaseRouter from './routes/purchase';
 
 dotenv.config();
 
@@ -40,6 +42,8 @@ mongoose.connection.on("disconnected", () => {
 
 app.use("/api/user", userRouter);
 app.use("/api/auth", authRouter);
+app.use("/api/store", storeRouter);
+app.use("/api/purchase", purchaseRouter);
 
 app.listen(process.env.PORT || 8800, () => {
   connect();

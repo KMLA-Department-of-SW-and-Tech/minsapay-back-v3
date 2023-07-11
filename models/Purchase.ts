@@ -6,11 +6,10 @@ const PurchaseSchema = createSchema({
   store: Type.string({ required: true }),
   product: Type.string({ required: true }),
   price: Type.number({ required: true }),
-  total: Type.number({ required: true }),
 });
 
-const PurchasesModel = typedModel("Purchase", PurchaseSchema, "Purchase");
+const PurchaseModel = typedModel("Purchase", PurchaseSchema, "Purchase");
 
-type PurchasesDoc = ExtractDoc<typeof PurchaseSchema>;
+type PurchaseDoc = ExtractDoc<typeof PurchaseSchema>;
 
-export { PurchaseSchema, PurchasesModel, PurchasesDoc };
+export { PurchaseSchema, PurchaseModel, PurchaseDoc };

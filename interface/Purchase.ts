@@ -5,4 +5,5 @@ export interface Purchases {
   price: number;
   total: number;
   store: string;
+  uuid: string;
 }
