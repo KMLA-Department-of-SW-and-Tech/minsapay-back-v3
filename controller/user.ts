@@ -265,3 +265,51 @@ export const getAllUsersWithNegativeBalance = async (
     });
   }
 };
+
+export const changeUserIsSecurePurchaseMode = async (
+  req: Request,
+  res: Response
+) => {
+  const { newSecurePurchaseMode } = req.body;
+  if (!req.params.username) {
+    return res.status(400).json({
+      success: false,
+      message: "Malformed request syntax",
+    });
+  }
+  try {
+    const login = await LoginModel.findOne({
+      username: req.params.username,
+    });
+    if (!login) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+    const userData = await UserModel.findOne({
+      _id: login.user,
+    });
+    if (!userData) {
+      return res.status(406).json({
+        success: false,
+        message: "Requested user is probably a store",
+      });
+    }
+
+    userData.isSecurePurchase = newSecurePurchaseMode;
+
+    await userData.save();
+
+    return res.status(200).json({
+      success: true,
+      message: "Secure purchase mode changed",
+    });
+  } catch (err) {
+    console.log(err);
+    return res.status(500).json({
+      success: false,
+      message: "Internal server error",
+    });
+  }
+};

@@ -5,8 +5,6 @@ import { LoginModel } from "../models/Login";
 
 import { Request, Response } from "express";
 
-import { generateUuid } from "../util/uuid";
-
 export const createPurchase = async (req: Request, res: Response) => {
   if (
     !req.body.username ||
@@ -70,6 +68,14 @@ export const createPurchase = async (req: Request, res: Response) => {
         message: "User not found",
       });
     }
+
+    if (user.isSecurePurchase && user.securePurchaseEndDate < new Date()) {
+      return res.status(403).json({
+        success: false,
+        message: "User did not authorize purchase",
+      });
+    }
+    
     const purchase = new PurchaseModel({
       user: user._id,
       store: store._id,
@@ -81,6 +87,7 @@ export const createPurchase = async (req: Request, res: Response) => {
       userAmount: user.balance - req.body.amount,
       storeAmount: store.balance + req.body.amount,
     });
+
     await purchase.save();
 
     const newPurchaseId = purchase._id;
@@ -91,6 +98,7 @@ export const createPurchase = async (req: Request, res: Response) => {
 
     user.purchases.push(newPurchaseId);
     user.balance -= req.body.amount;
+    user.securePurchaseEndDate = new Date();
 
     await user.save();
 

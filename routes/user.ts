@@ -1,6 +1,7 @@
 import express from "express";
 import {
   allowPurchaseForMinute,
+  changeUserIsSecurePurchaseMode,
   getAllUsersWithNegativeBalance,
   getUserBalanceByUsername,
   getUserByUsername,
@@ -16,5 +17,6 @@ router.get("/balance/:username", getUserBalanceByUsername);
 router.get("/secure/:username", isUserUsingSecurePurchase);
 router.post("/purchase/:username", allowPurchaseForMinute);
 router.get("/negative", getAllUsersWithNegativeBalance);
+router.post("/mode/:username", changeUserIsSecurePurchaseMode);
 
 export default router;
