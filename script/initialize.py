@@ -29,31 +29,11 @@ for i in tqdm(range(len(df)), desc="유저 생성중", unit="명"):
         "name": df.iloc[i, 1],
         "purchases": [],
         "balance": 0,
-        "isSecurePurchase": False,
-        # get current time
+        "isSecurePurchase": True,
         "securePurchaseEndDate": time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
     }
 
-    if (df.iloc[i, 2] == 3):
-        userData["balance"] = 7000
-        purchase_collection.insert_one(
-            {
-                "time": time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()),
-                "user": str(df.iloc[i, 0]),
-                "product": {
-                    "id": "1",
-                    "name": "3학년 기본금액",
-                    "price": 7000
-                },
-                "price": -7000,
-                "total": 7000,
-                "store": "금융정보부"
-            })
-        userData["purchases"].append(str(purchase_collection.find_one({"user": str(df.iloc[i, 0])})["_id"]))
-        
-
     user_collection.insert_one(userData)
-    # retrieve inserted user _id
     data["user"] = str(user_collection.find_one(userData)["_id"])
 
     login_collection.insert_one(data)
