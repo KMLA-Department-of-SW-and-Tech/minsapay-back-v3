@@ -75,12 +75,16 @@ export const createPurchase = async (req: Request, res: Response) => {
         message: "User did not authorize purchase",
       });
     }
-    
+    const date = new Date();
+    const newDate = date.getHours().toString().padStart(2, '0') + ":"+date.getMinutes().toString().padStart(2, '0')+":" + date.getSeconds().toString().padStart(2, '0');
+    // make HH:MM:SS, fill in the blanks with 0
+
+    console.log(newDate)
     const purchase = new PurchaseModel({
       user: user._id,
       store: store._id,
       price: req.body.amount,
-      time: new Date(),
+      time: newDate,
       product: req.body.productName,
       nameOfStore: req.body.nameOfStore,
       nameOfUser: req.body.nameOfUser,

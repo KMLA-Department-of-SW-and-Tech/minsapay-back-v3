@@ -44,6 +44,9 @@ export const login = async (req: Request, res: Response) => {
     const payload = {
       login: {
         id: login.id,
+        username: login.username,
+        userType: login.userType,
+        isAdmin: login.isAdmin,
       },
     };
     const token = jwt.sign(payload, JWT, {
@@ -51,7 +54,6 @@ export const login = async (req: Request, res: Response) => {
     });
     return res.status(200).json({
       token: token,
-      userType: login.userType,
       success: true,
     });
   } catch (err) {
