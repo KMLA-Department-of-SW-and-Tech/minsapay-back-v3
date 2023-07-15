@@ -18,7 +18,7 @@ const app: Express = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 
-const allowedOrigins: string[] = ['www.kmlapay.com'];
+const allowedOrigins: string[] = ['https://www.kmlapay.com', 'http://localhost:3000'];
 
 const corsOptions: CorsOptions = {
   origin: (origin, callback) => {
