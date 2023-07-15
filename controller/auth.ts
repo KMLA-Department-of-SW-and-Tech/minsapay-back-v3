@@ -41,12 +41,37 @@ export const login = async (req: Request, res: Response) => {
         message: "Incorrect password",
       });
     }
+    let name = "";
+    if (login.userType === "user") {
+      const user = await UserModel.findOne({
+        _id: login.user,
+      });
+      if (!user) {
+        return res.status(404).json({
+          success: false,
+          message: "User not found",
+        });
+      }
+      name = user.name;
+    } else if (login.userType === "store") {
+      const store = await StoreModel.findOne({
+        _id: login.store,
+      });
+      if (!store) {
+        return res.status(404).json({
+          success: false,
+          message: "Store not found",
+        });
+      }
+      name = store.name;
+    }
     const payload = {
       login: {
         id: login.id,
         username: login.username,
         userType: login.userType,
         isAdmin: login.isAdmin,
+        name: name,
       },
     };
     const token = jwt.sign(payload, JWT, {

@@ -110,7 +110,7 @@ export const createPurchase = async (req: Request, res: Response) => {
       store.purchases = [];
     }
 
-    store.purchases.push(newPurchaseId);
+    store.purchases.push(newPurchaseId.toString());
     store.balance += req.body.amount;
 
     await store.save();
