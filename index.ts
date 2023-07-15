@@ -1,7 +1,7 @@
 import express, { Express, Request, Response } from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
-import cors from "cors";
+import cors, { CorsOptions } from "cors";
 import morgan from "morgan";
 import helmet from "helmet";
 import bodyParser from "body-parser";
@@ -18,7 +18,20 @@ const app: Express = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 
-app.use(cors());
+const allowedOrigins: string[] = ['www.kmlapay.com'];
+
+const corsOptions: CorsOptions = {
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin || '')) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+};
+
+app.use(cors(corsOptions));
+
 app.use(morgan("dev"));
 app.use(helmet());
 app.use(bodyParser.json());
