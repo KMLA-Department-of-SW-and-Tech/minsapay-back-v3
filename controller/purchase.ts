@@ -76,10 +76,15 @@ export const createPurchase = async (req: Request, res: Response) => {
       });
     }
     const date = new Date();
-    const newDate = date.getHours().toString().padStart(2, '0') + ":"+date.getMinutes().toString().padStart(2, '0')+":" + date.getSeconds().toString().padStart(2, '0');
+    const newDate =
+      date.getHours().toString().padStart(2, "0") +
+      ":" +
+      date.getMinutes().toString().padStart(2, "0") +
+      ":" +
+      date.getSeconds().toString().padStart(2, "0");
     // make HH:MM:SS, fill in the blanks with 0
 
-    console.log(newDate)
+    console.log(newDate);
     const purchase = new PurchaseModel({
       user: user._id,
       store: store._id,

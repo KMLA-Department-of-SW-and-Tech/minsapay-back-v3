@@ -18,8 +18,9 @@ const app: Express = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json())
 
-const allowedOrigins: string[] = ['https://www.kmlapay.com', 'http://localhost:3000'];
+// const allowedOrigins: string[] = ['https://www.kmlapay.com', 'http://localhost:3000'];
 
+/*
 const corsOptions: CorsOptions = {
   origin: (origin, callback) => {
     if (allowedOrigins.includes(origin || '')) {
@@ -29,8 +30,10 @@ const corsOptions: CorsOptions = {
     }
   },
 };
+*/
 
-app.use(cors(corsOptions));
+// app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(morgan("dev"));
 app.use(helmet());
