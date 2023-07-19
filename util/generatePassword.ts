@@ -6,3 +6,5 @@ export const generatePassword = () => {
     }
     return password;
 };
+
+console.log(generatePassword());

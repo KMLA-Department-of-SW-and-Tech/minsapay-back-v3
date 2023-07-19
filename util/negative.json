@@ -1,0 +1,1111 @@
+{
+	"users": [
+		{
+			"_id": "64b3c9034b037e4387b3ba85",
+			"name": "강나현",
+			"purchases": [
+				"64b5e1ade7ba1842cd2c9271",
+				"64b5ed62e7ba1842cd2cccc2",
+				"64b5f815e7ba1842cd2d00b5",
+				"64b5ff4ae7ba1842cd2d26e9"
+			],
+			"balance": -13000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:56:10.163Z",
+			"__v": 4
+		},
+		{
+			"_id": "64b3c9084b037e4387b3ba91",
+			"name": "권도윤",
+			"purchases": [
+				"64b4d589e7ba1842cd2c729c",
+				"64b5e566e7ba1842cd2c9ee5",
+				"64b5f779e7ba1842cd2cfbc5"
+			],
+			"balance": -2000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:26:43.294Z",
+			"__v": 3
+		},
+		{
+			"_id": "64b3c9084b037e4387b3ba93",
+			"name": "권종구",
+			"purchases": [
+				"64b60cc2e7ba1842cd2d5e7c"
+			],
+			"balance": -15000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T03:53:38.715Z",
+			"__v": 1
+		},
+		{
+			"_id": "64b3c90f4b037e4387b3baa3",
+			"name": "김민소",
+			"purchases": [
+				"64b5e3d0e7ba1842cd2c9926",
+				"64b5fef3e7ba1842cd2d25a7",
+				"64b61585e7ba1842cd2d736b"
+			],
+			"balance": -79000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T04:31:01.844Z",
+			"__v": 3
+		},
+		{
+			"_id": "64b3c9114b037e4387b3baa9",
+			"name": "김서균",
+			"purchases": [
+				"64b5df69e7ba1842cd2c8cf6",
+				"64b5f153e7ba1842cd2ce2a8",
+				"64b5f439e7ba1842cd2cedb4"
+			],
+			"balance": -18500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:08:57.035Z",
+			"__v": 3
+		},
+		{
+			"_id": "64b3c9124b037e4387b3baad",
+			"name": "김솔",
+			"purchases": [
+				"64b4c514e7ba1842cd2c6add",
+				"64b5ea1be7ba1842cd2cbb0d",
+				"64b5f0fde7ba1842cd2ce0d9"
+			],
+			"balance": -20999,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T01:55:09.650Z",
+			"__v": 3
+		},
+		{
+			"_id": "64b3c9134b037e4387b3bab1",
+			"name": "김아현",
+			"purchases": [
+				"64b5ff94e7ba1842cd2d27ed"
+			],
+			"balance": -4000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:57:24.553Z",
+			"__v": 1
+		},
+		{
+			"_id": "64b3c9184b037e4387b3babb",
+			"name": "김준범",
+			"purchases": [
+				"64b5db5ce7ba1842cd2c8747",
+				"64b5e656e7ba1842cd2ca408",
+				"64b5e82de7ba1842cd2cafc4",
+				"64b5f7bee7ba1842cd2cfd97"
+			],
+			"balance": -29500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:23:58.271Z",
+			"__v": 4
+		},
+		{
+			"_id": "64b3c91b4b037e4387b3bac3",
+			"name": "김철연",
+			"purchases": [
+				"64b5f46fe7ba1842cd2cee48",
+				"64b5f570e7ba1842cd2cf26b"
+			],
+			"balance": -20500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:14:08.080Z",
+			"__v": 2
+		},
+		{
+			"_id": "64b3c91b4b037e4387b3bac5",
+			"name": "김태훈",
+			"purchases": [
+				"64b54412e7ba1842cd2c78b1",
+				"64b5f0c1e7ba1842cd2cdf78",
+				"64b5f101e7ba1842cd2ce108",
+				"64b5f297e7ba1842cd2ce7b1",
+				"64b5fbe7e7ba1842cd2d1480",
+				"64b5fdabe7ba1842cd2d1eaf"
+			],
+			"balance": -6500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:49:15.069Z",
+			"__v": 6
+		},
+		{
+			"_id": "64b3c9234b037e4387b3bad5",
+			"name": "민규리",
+			"purchases": [
+				"64b5f4e1e7ba1842cd2cefd8",
+				"64b5f8ffe7ba1842cd2d04bd",
+				"64b617d7e7ba1842cd2d76de",
+				"64b6187ce7ba1842cd2d777b"
+			],
+			"balance": -52000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T04:43:40.405Z",
+			"__v": 4
+		},
+		{
+			"_id": "64b3c9284b037e4387b3bae3",
+			"name": "박종우",
+			"purchases": [
+				"64b5fc12e7ba1842cd2d15b3"
+			],
+			"balance": -4000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:44:04.263Z",
+			"__v": 1
+		},
+		{
+			"_id": "64b3c92b4b037e4387b3bae9",
+			"name": "서시현",
+			"purchases": [
+				"64b4cd5fe7ba1842cd2c70b4",
+				"64b60a67e7ba1842cd2d55fc",
+				"64b6103ce7ba1842cd2d6841"
+			],
+			"balance": -2000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T04:09:33.119Z",
+			"__v": 3
+		},
+		{
+			"_id": "64b3c92b4b037e4387b3baeb",
+			"name": "서우찬",
+			"purchases": [
+				"64b4cf68e7ba1842cd2c7161",
+				"64b5f971e7ba1842cd2d0757",
+				"64b5fe29e7ba1842cd2d215d",
+				"64b5fe77e7ba1842cd2d22f0"
+			],
+			"balance": -64000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:52:39.802Z",
+			"__v": 4
+		},
+		{
+			"_id": "64b3c9314b037e4387b3baf9",
+			"name": "성종민",
+			"purchases": [
+				"64b5fa2de7ba1842cd2d0abb"
+			],
+			"balance": -12000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:35:24.830Z",
+			"__v": 1
+		},
+		{
+			"_id": "64b3c9344b037e4387b3bb01",
+			"name": "송은채",
+			"purchases": [
+				"64b4cfbae7ba1842cd2c7173",
+				"64b5dd07e7ba1842cd2c8907",
+				"64b5e765e7ba1842cd2ca9b7",
+				"64b5e8d4e7ba1842cd2cb3f5"
+			],
+			"balance": -22500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T01:20:20.729Z",
+			"__v": 4
+		},
+		{
+			"_id": "64b3c9374b037e4387b3bb07",
+			"name": "심성현",
+			"purchases": [
+				"64b4c8f7e7ba1842cd2c6f2e",
+				"64b5dface7ba1842cd2c8d92",
+				"64b5e78fe7ba1842cd2caaf1"
+			],
+			"balance": -1500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T01:14:55.335Z",
+			"__v": 3
+		},
+		{
+			"_id": "64b3c9384b037e4387b3bb09",
+			"name": "양윤영",
+			"purchases": [
+				"64b5432be7ba1842cd2c77a9",
+				"64b54d69e7ba1842cd2c7f31",
+				"64b5e15ee7ba1842cd2c91a7",
+				"64b5edd5e7ba1842cd2cce99",
+				"64b5f86fe7ba1842cd2d020d"
+			],
+			"balance": -5000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:26:55.820Z",
+			"__v": 5
+		},
+		{
+			"_id": "64b3c9394b037e4387b3bb0b",
+			"name": "양지윤",
+			"purchases": [
+				"64b60beae7ba1842cd2d5b2c",
+				"64b60c5de7ba1842cd2d5d48"
+			],
+			"balance": -8500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T03:51:57.550Z",
+			"__v": 2
+		},
+		{
+			"_id": "64b3c93c4b037e4387b3bb13",
+			"name": "윤다희",
+			"purchases": [
+				"64b4cf37e7ba1842cd2c714b",
+				"64b5f0ebe7ba1842cd2ce089",
+				"64b5fd94e7ba1842cd2d1e1b"
+			],
+			"balance": -10000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:48:52.394Z",
+			"__v": 3
+		},
+		{
+			"_id": "64b3c93d4b037e4387b3bb15",
+			"name": "윤영준",
+			"purchases": [
+				"64b4db3be7ba1842cd2c7305",
+				"64b5f027e7ba1842cd2cdbe9",
+				"64b5f7cee7ba1842cd2cfe13",
+				"64b5fd3ee7ba1842cd2d1bf2",
+				"64b608e7e7ba1842cd2d509b"
+			],
+			"balance": -12000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T03:37:11.655Z",
+			"__v": 5
+		},
+		{
+			"_id": "64b3c93e4b037e4387b3bb19",
+			"name": "윤찬식",
+			"purchases": [
+				"64b5fe64e7ba1842cd2d2296",
+				"64b60985e7ba1842cd2d5313",
+				"64b610b2e7ba1842cd2d69d9"
+			],
+			"balance": -14500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T04:10:26.188Z",
+			"__v": 3
+		},
+		{
+			"_id": "64b3c9424b037e4387b3bb25",
+			"name": "이상효",
+			"purchases": [
+				"64b5efe2e7ba1842cd2cda96",
+				"64b5f57ce7ba1842cd2cf2bc"
+			],
+			"balance": -8000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:14:20.474Z",
+			"__v": 2
+		},
+		{
+			"_id": "64b3c9434b037e4387b3bb29",
+			"name": "이세윤",
+			"purchases": [
+				"64b4c8e5e7ba1842cd2c6f0a",
+				"64b54d42e7ba1842cd2c7ef6",
+				"64b5e12ae7ba1842cd2c9103",
+				"64b5f7f1e7ba1842cd2cff48",
+				"64b5fcc8e7ba1842cd2d19ce"
+			],
+			"balance": -22000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:45:28.731Z",
+			"__v": 5
+		},
+		{
+			"_id": "64b3c9474b037e4387b3bb33",
+			"name": "이중호",
+			"purchases": [
+				"64b5dea6e7ba1842cd2c8b8a",
+				"64b5e8c3e7ba1842cd2cb364",
+				"64b5f7d3e7ba1842cd2cfe38"
+			],
+			"balance": -39000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:24:19.267Z",
+			"__v": 3
+		},
+		{
+			"_id": "64b3c9484b037e4387b3bb37",
+			"name": "이채원B",
+			"purchases": [
+				"64b60615e7ba1842cd2d440b"
+			],
+			"balance": -1500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T03:25:09.252Z",
+			"__v": 1
+		},
+		{
+			"_id": "64b3c94a4b037e4387b3bb3b",
+			"name": "이현민",
+			"purchases": [
+				"64b540f6e7ba1842cd2c75ec",
+				"64b5e565e7ba1842cd2c9edd",
+				"64b5e5fbe7ba1842cd2ca1d9",
+				"64b5eb0de7ba1842cd2cbfbb",
+				"64b5edfce7ba1842cd2ccf8e"
+			],
+			"balance": -55000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T01:42:20.191Z",
+			"__v": 5
+		},
+		{
+			"_id": "64b3c94a4b037e4387b3bb3d",
+			"name": "이현준",
+			"purchases": [
+				"64b4d56be7ba1842cd2c728a",
+				"64b5e5b0e7ba1842cd2ca05d",
+				"64b5e96be7ba1842cd2cb6c3",
+				"64b5eddce7ba1842cd2ccec3"
+			],
+			"balance": -23500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T01:41:48.132Z",
+			"__v": 4
+		},
+		{
+			"_id": "64b3c94b4b037e4387b3bb3f",
+			"name": "이희준",
+			"purchases": [
+				"64b5dec2e7ba1842cd2c8bbd",
+				"64b5e104e7ba1842cd2c909d",
+				"64b5edb7e7ba1842cd2ccdf8",
+				"64b5fc56e7ba1842cd2d174f"
+			],
+			"balance": -30000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:43:34.853Z",
+			"__v": 4
+		},
+		{
+			"_id": "64b3c94f4b037e4387b3bb49",
+			"name": "임정윤",
+			"purchases": [
+				"64b4d1c2e7ba1842cd2c724e",
+				"64b5df95e7ba1842cd2c8d50",
+				"64b5e760e7ba1842cd2ca998",
+				"64b5f124e7ba1842cd2ce19b"
+			],
+			"balance": -4000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T01:55:48.078Z",
+			"__v": 4
+		},
+		{
+			"_id": "64b3c9524b037e4387b3bb51",
+			"name": "장태형",
+			"purchases": [
+				"64b4dc3ee7ba1842cd2c7317",
+				"64b5df03e7ba1842cd2c8c31",
+				"64b5e8b9e7ba1842cd2cb32a",
+				"64b5fa9be7ba1842cd2d0d94",
+				"64b604abe7ba1842cd2d3eec",
+				"64b60db3e7ba1842cd2d6068"
+			],
+			"balance": -4000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T03:57:39.028Z",
+			"__v": 6
+		},
+		{
+			"_id": "64b3c9554b037e4387b3bb59",
+			"name": "정민교",
+			"purchases": [
+				"64b540c9e7ba1842cd2c75c4",
+				"64b5e016e7ba1842cd2c8e86",
+				"64b5ed29e7ba1842cd2ccb71",
+				"64b601a9e7ba1842cd2d3092"
+			],
+			"balance": -11500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T05:25:01.598Z",
+			"__v": 4
+		},
+		{
+			"_id": "64b3c95b4b037e4387b3bb67",
+			"name": "채도윤",
+			"purchases": [
+				"64b5ec37e7ba1842cd2cc6bb",
+				"64b617a6e7ba1842cd2d7687"
+			],
+			"balance": -46500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T04:40:06.302Z",
+			"__v": 2
+		},
+		{
+			"_id": "64b3c95b4b037e4387b3bb69",
+			"name": "채유찬",
+			"purchases": [
+				"64b4dc5be7ba1842cd2c7329",
+				"64b5de34e7ba1842cd2c8afb",
+				"64b5e9e4e7ba1842cd2cb9b0",
+				"64b5f720e7ba1842cd2cf9a8",
+				"64b603c2e7ba1842cd2d3afb",
+				"64b60df3e7ba1842cd2d60c9"
+			],
+			"balance": -13000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T03:58:43.092Z",
+			"__v": 6
+		},
+		{
+			"_id": "64b3c95e4b037e4387b3bb71",
+			"name": "최시현",
+			"purchases": [
+				"64b4cda3e7ba1842cd2c70ea",
+				"64b5dd5de7ba1842cd2c897a",
+				"64b5e06ae7ba1842cd2c8f4d",
+				"64b5e975e7ba1842cd2cb709",
+				"64b5f79de7ba1842cd2cfccb"
+			],
+			"balance": -12000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:24:28.792Z",
+			"__v": 5
+		},
+		{
+			"_id": "64b3c9644b037e4387b3bb81",
+			"name": "하지민",
+			"purchases": [
+				"64b5e7b5e7ba1842cd2cac1a",
+				"64b5f4bee7ba1842cd2cef81",
+				"64b5f50ae7ba1842cd2cf097"
+			],
+			"balance": -20000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:12:26.990Z",
+			"__v": 3
+		},
+		{
+			"_id": "64b3c9684b037e4387b3bb8d",
+			"name": "황규빈",
+			"purchases": [
+				"64b5df57e7ba1842cd2c8cc9",
+				"64b5f090e7ba1842cd2cde44",
+				"64b5f791e7ba1842cd2cfc8b",
+				"64b5fe5de7ba1842cd2d2254"
+			],
+			"balance": -17000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:52:13.993Z",
+			"__v": 4
+		},
+		{
+			"_id": "64b3c96a4b037e4387b3bb91",
+			"name": "황은결",
+			"purchases": [
+				"64b5df40e7ba1842cd2c8c97",
+				"64b5e8d1e7ba1842cd2cb3c4",
+				"64b5f486e7ba1842cd2ceeba"
+			],
+			"balance": -17000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:10:14.809Z",
+			"__v": 3
+		},
+		{
+			"_id": "64b3c96e4b037e4387b3bb9b",
+			"name": "김정우",
+			"purchases": [
+				"64b5ec4de7ba1842cd2cc727",
+				"64b5efabe7ba1842cd2cd974",
+				"64b5fae1e7ba1842cd2d0f06",
+				"64b6064ee7ba1842cd2d453f",
+				"64b60a1ae7ba1842cd2d54f0",
+				"64b60a33e7ba1842cd2d5520"
+			],
+			"balance": -24500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T03:43:44.639Z",
+			"__v": 6
+		},
+		{
+			"_id": "64b3c97b4b037e4387b3bbbd",
+			"name": "김강민",
+			"purchases": [
+				"64b5fe36e7ba1842cd2d21ba",
+				"64b601cce7ba1842cd2d316b",
+				"64b60629e7ba1842cd2d4470"
+			],
+			"balance": -9500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T03:25:29.259Z",
+			"__v": 3
+		},
+		{
+			"_id": "64b3c97e4b037e4387b3bbc7",
+			"name": "김민석",
+			"purchases": [
+				"64b5e564e7ba1842cd2c9ed1",
+				"64b5eb68e7ba1842cd2cc23a",
+				"64b5f149e7ba1842cd2ce223",
+				"64b60226e7ba1842cd2d33da",
+				"64b605dbe7ba1842cd2d4304",
+				"64b60f99e7ba1842cd2d6733"
+			],
+			"balance": -35000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T04:05:45.253Z",
+			"__v": 6
+		},
+		{
+			"_id": "64b3c9834b037e4387b3bbd3",
+			"name": "김시언",
+			"purchases": [
+				"64b543bce7ba1842cd2c782c",
+				"64b5f416e7ba1842cd2ced2a",
+				"64b5f5a7e7ba1842cd2cf389",
+				"64b600a8e7ba1842cd2d2c4a"
+			],
+			"balance": -9500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T03:02:00.202Z",
+			"__v": 4
+		},
+		{
+			"_id": "64b3c9854b037e4387b3bbd9",
+			"name": "김유신",
+			"purchases": [
+				"64b5e2b6e7ba1842cd2c959b",
+				"64b5e8a7e7ba1842cd2cb2e3",
+				"64b5eea6e7ba1842cd2cd41d",
+				"64b5feafe7ba1842cd2d2464"
+			],
+			"balance": -4000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:53:35.916Z",
+			"__v": 4
+		},
+		{
+			"_id": "64b3c9864b037e4387b3bbdb",
+			"name": "김재원",
+			"purchases": [
+				"64b5f07be7ba1842cd2cddcc",
+				"64b5f210e7ba1842cd2ce5a3",
+				"64b5f35ce7ba1842cd2ceafd",
+				"64b5f7e6e7ba1842cd2cfeb6",
+				"64b5f86ae7ba1842cd2d01dd",
+				"64b5fef3e7ba1842cd2d259f",
+				"64b60a03e7ba1842cd2d5487",
+				"64b60f7be7ba1842cd2d66da",
+				"64b616bce7ba1842cd2d7538"
+			],
+			"balance": -5000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T04:36:12.400Z",
+			"__v": 9
+		},
+		{
+			"_id": "64b3c9874b037e4387b3bbdf",
+			"name": "김지민",
+			"purchases": [
+				"64b5f2cae7ba1842cd2ce8e5",
+				"64b5f878e7ba1842cd2d0231",
+				"64b5fb24e7ba1842cd2d10ad",
+				"64b601aee7ba1842cd2d30eb",
+				"64b60725e7ba1842cd2d4926",
+				"64b60fc4e7ba1842cd2d6799",
+				"64b6160be7ba1842cd2d748f"
+			],
+			"balance": -14500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T04:33:15.425Z",
+			"__v": 7
+		},
+		{
+			"_id": "64b3c9884b037e4387b3bbe1",
+			"name": "김지안",
+			"purchases": [
+				"64b61b6fe7ba1842cd2d805d"
+			],
+			"balance": -3000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T04:56:15.801Z",
+			"__v": 1
+		},
+		{
+			"_id": "64b3c98a4b037e4387b3bbe7",
+			"name": "김헌",
+			"purchases": [
+				"64b5e962e7ba1842cd2cb69c",
+				"64b5ebdfe7ba1842cd2cc500",
+				"64b5fabee7ba1842cd2d0e44",
+				"64b6028ae7ba1842cd2d35d9",
+				"64b603bae7ba1842cd2d3ad2",
+				"64b6095fe7ba1842cd2d5243",
+				"64b61284e7ba1842cd2d6e31",
+				"64b618ebe7ba1842cd2d7876"
+			],
+			"balance": -31500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T04:45:31.899Z",
+			"__v": 8
+		},
+		{
+			"_id": "64b3c98b4b037e4387b3bbe9",
+			"name": "김호성",
+			"purchases": [
+				"64b5ec0ce7ba1842cd2cc62d",
+				"64b5fa9fe7ba1842cd2d0da8",
+				"64b5fb33e7ba1842cd2d10e5",
+				"64b60101e7ba1842cd2d2df0",
+				"64b61c3fe7ba1842cd2d8247"
+			],
+			"balance": -23500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T04:59:43.167Z",
+			"__v": 5
+		},
+		{
+			"_id": "64b3c99f4b037e4387b3bc21",
+			"name": "배서진",
+			"purchases": [
+				"64b54d5be7ba1842cd2c7f1f",
+				"64b5e26be7ba1842cd2c9492",
+				"64b5ee19e7ba1842cd2cd05d",
+				"64b5ee19e7ba1842cd2cd05f",
+				"64b5f6d5e7ba1842cd2cf7af",
+				"64b61c74e7ba1842cd2d82c3"
+			],
+			"balance": -12000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T05:00:36.187Z",
+			"__v": 6
+		},
+		{
+			"_id": "64b3c9a54b037e4387b3bc31",
+			"name": "신이현",
+			"purchases": [
+				"64b5469ce7ba1842cd2c7bfb",
+				"64b5e732e7ba1842cd2ca88c",
+				"64b5ee0de7ba1842cd2ccfe9",
+				"64b5f6b8e7ba1842cd2cf733",
+				"64b5f8c5e7ba1842cd2d038e",
+				"64b5fdf5e7ba1842cd2d1fc5",
+				"64b60878e7ba1842cd2d4e64",
+				"64b60b62e7ba1842cd2d593c",
+				"64b60d8ee7ba1842cd2d602b"
+			],
+			"balance": -3500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T03:57:02.709Z",
+			"__v": 9
+		},
+		{
+			"_id": "64b3c9ab4b037e4387b3bc41",
+			"name": "엄세아",
+			"purchases": [
+				"64b5e8a5e7ba1842cd2cb2ce",
+				"64b5edf0e7ba1842cd2ccf30",
+				"64b5fb86e7ba1842cd2d12d0",
+				"64b5fd8ae7ba1842cd2d1dd9",
+				"64b60020e7ba1842cd2d2a04"
+			],
+			"balance": -30500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:59:44.266Z",
+			"__v": 5
+		},
+		{
+			"_id": "64b3c9ad4b037e4387b3bc45",
+			"name": "오승찬",
+			"purchases": [
+				"64b4c712e7ba1842cd2c6d8a",
+				"64b5ea1ae7ba1842cd2cbafe",
+				"64b5eec5e7ba1842cd2cd4d7",
+				"64b5f3a0e7ba1842cd2cebd4",
+				"64b5f60ee7ba1842cd2cf4a1",
+				"64b619dde7ba1842cd2d7b0c"
+			],
+			"balance": -11000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T04:49:33.195Z",
+			"__v": 6
+		},
+		{
+			"_id": "64b3c9b04b037e4387b3bc4d",
+			"name": "우지민",
+			"purchases": [
+				"64b5ecb6e7ba1842cd2cc98d",
+				"64b5ef51e7ba1842cd2cd7aa",
+				"64b5ef65e7ba1842cd2cd831",
+				"64b5f0f1e7ba1842cd2ce0ad",
+				"64b5fa89e7ba1842cd2d0d0d",
+				"64b5feabe7ba1842cd2d2455",
+				"64b611f2e7ba1842cd2d6d04",
+				"64b61fd703e0935bf08da4cf"
+			],
+			"balance": -41500,
+			"isSecurePurchase": false,
+			"securePurchaseEndDate": "2023-07-18T05:15:03.328Z",
+			"__v": 8
+		},
+		{
+			"_id": "64b3c9b24b037e4387b3bc53",
+			"name": "유지환",
+			"purchases": [
+				"64b5e775e7ba1842cd2caa2a",
+				"64b5ecece7ba1842cd2cca45",
+				"64b5f049e7ba1842cd2cdcb5",
+				"64b5f59ae7ba1842cd2cf330",
+				"64b5f72ce7ba1842cd2cf9dd",
+				"64b5f74ce7ba1842cd2cfa96",
+				"64b5f8cde7ba1842cd2d03c6",
+				"64b5fef7e7ba1842cd2d25cf",
+				"64b607f6e7ba1842cd2d4d19",
+				"64b60a55e7ba1842cd2d55c4",
+				"64b610ede7ba1842cd2d6aa1"
+			],
+			"balance": -81000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T04:11:25.750Z",
+			"__v": 11
+		},
+		{
+			"_id": "64b3c9b54b037e4387b3bc5d",
+			"name": "이서진",
+			"purchases": [
+				"64b5e27be7ba1842cd2c94ca",
+				"64b5e887e7ba1842cd2cb21f",
+				"64b5eae6e7ba1842cd2cbf04",
+				"64b5eea5e7ba1842cd2cd40a",
+				"64b5f383e7ba1842cd2ceb7a",
+				"64b5f62de7ba1842cd2cf531",
+				"64b5f7e9e7ba1842cd2cfef4",
+				"64b5f859e7ba1842cd2d01a5",
+				"64b5fa12e7ba1842cd2d0a58",
+				"64b61332e7ba1842cd2d6fcc",
+				"64b61af9e7ba1842cd2d7f67"
+			],
+			"balance": -2000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T04:54:17.848Z",
+			"__v": 11
+		},
+		{
+			"_id": "64b3c9ba4b037e4387b3bc6b",
+			"name": "이재우",
+			"purchases": [
+				"64b4c799e7ba1842cd2c6e69",
+				"64b5ecb1e7ba1842cd2cc966",
+				"64b5f325e7ba1842cd2cea42",
+				"64b5f4b0e7ba1842cd2cef33",
+				"64b5f535e7ba1842cd2cf144",
+				"64b5fd2de7ba1842cd2d1bb2",
+				"64b610cae7ba1842cd2d6a59"
+			],
+			"balance": -6500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T04:10:50.955Z",
+			"__v": 7
+		},
+		{
+			"_id": "64b3c9bb4b037e4387b3bc6f",
+			"name": "이창목",
+			"purchases": [
+				"64b5e2d3e7ba1842cd2c95f3",
+				"64b5e617e7ba1842cd2ca25d",
+				"64b5e634e7ba1842cd2ca2f7",
+				"64b5ef75e7ba1842cd2cd889",
+				"64b5fb5ee7ba1842cd2d121a",
+				"64b5fd96e7ba1842cd2d1e35"
+			],
+			"balance": -29000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:48:54.502Z",
+			"__v": 6
+		},
+		{
+			"_id": "64b3c9c04b037e4387b3bc7d",
+			"name": "장승필",
+			"purchases": [
+				"64b5f0bde7ba1842cd2cdf3d",
+				"64b5f1d6e7ba1842cd2ce508",
+				"64b5fec3e7ba1842cd2d24a9",
+				"64b5ff19e7ba1842cd2d2614",
+				"64b6026be7ba1842cd2d34e1"
+			],
+			"balance": -4000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T03:09:31.372Z",
+			"__v": 5
+		},
+		{
+			"_id": "64b3c9c64b037e4387b3bc8f",
+			"name": "정유찬A",
+			"purchases": [
+				"64b5e171e7ba1842cd2c91e7",
+				"64b6093fe7ba1842cd2d51f4",
+				"64b61b18e7ba1842cd2d7fd4"
+			],
+			"balance": -6499,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T04:54:48.507Z",
+			"__v": 3
+		},
+		{
+			"_id": "64b3c9c84b037e4387b3bc95",
+			"name": "정이안",
+			"purchases": [
+				"64b601dfe7ba1842cd2d3200",
+				"64b602ede7ba1842cd2d37ea"
+			],
+			"balance": -3000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T03:11:41.510Z",
+			"__v": 2
+		},
+		{
+			"_id": "64b3c9ce4b037e4387b3bca5",
+			"name": "주현규",
+			"purchases": [
+				"64b618c3e7ba1842cd2d7827",
+				"64b61ff803e0935bf08da50a"
+			],
+			"balance": -9000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T05:20:19.463Z",
+			"__v": 2
+		},
+		{
+			"_id": "64b3c9d54b037e4387b3bcbb",
+			"name": "한준희",
+			"purchases": [
+				"64b5e055e7ba1842cd2c8f1f",
+				"64b5ec73e7ba1842cd2cc7f8",
+				"64b5ee96e7ba1842cd2cd3ad",
+				"64b6020fe7ba1842cd2d331f",
+				"64b611dce7ba1842cd2d6cd9"
+			],
+			"balance": -2000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T04:15:24.719Z",
+			"__v": 5
+		},
+		{
+			"_id": "64b3c9d74b037e4387b3bcbf",
+			"name": "황나경",
+			"purchases": [
+				"64b4c74ce7ba1842cd2c6de9",
+				"64b5e673e7ba1842cd2ca47f",
+				"64b5eb18e7ba1842cd2cbffe",
+				"64b5f33de7ba1842cd2cea95",
+				"64b5fd68e7ba1842cd2d1d36",
+				"64b602b6e7ba1842cd2d36c8",
+				"64b60305e7ba1842cd2d384b",
+				"64b60748e7ba1842cd2d4a32",
+				"64b61dfa03e0935bf08da258"
+			],
+			"balance": -9000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T05:07:06.151Z",
+			"__v": 10
+		},
+		{
+			"_id": "64b3c9f44b037e4387b3bd13",
+			"name": "김현수",
+			"purchases": [
+				"64b6119be7ba1842cd2d6c92",
+				"64b61295e7ba1842cd2d6e93",
+				"64b61bdbe7ba1842cd2d80fa"
+			],
+			"balance": -26000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T04:58:03.214Z",
+			"__v": 3
+		},
+		{
+			"_id": "64b3c9fa4b037e4387b3bd25",
+			"name": "박세은",
+			"purchases": [
+				"64b5457fe7ba1842cd2c79ec",
+				"64b5ea11e7ba1842cd2cba9f",
+				"64b5f007e7ba1842cd2cdb27",
+				"64b5f152e7ba1842cd2ce295",
+				"64b60121e7ba1842cd2d2eda",
+				"64b60f98e7ba1842cd2d6729",
+				"64b61a00e7ba1842cd2d7bcf"
+			],
+			"balance": -1500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T04:50:08.805Z",
+			"__v": 7
+		},
+		{
+			"_id": "64b3ca0e4b037e4387b3bd5d",
+			"name": "안애린",
+			"purchases": [
+				"64b4c4d8e7ba1842cd2c6a4d",
+				"64b5e5f2e7ba1842cd2ca197",
+				"64b5ed31e7ba1842cd2ccb96",
+				"64b5efc2e7ba1842cd2cd9cb",
+				"64b5f3d1e7ba1842cd2cec5c",
+				"64b600bde7ba1842cd2d2cb5",
+				"64b6022be7ba1842cd2d341b",
+				"64b60555e7ba1842cd2d415c",
+				"64b6069ce7ba1842cd2d46a2",
+				"64b61544e7ba1842cd2d7303",
+				"64b61a55e7ba1842cd2d7d2c",
+				"64b6203003e0935bf08da54d"
+			],
+			"balance": -32000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T05:16:32.928Z",
+			"__v": 13
+		},
+		{
+			"_id": "64b3ca114b037e4387b3bd65",
+			"name": "양지호",
+			"purchases": [
+				"64b5ec2be7ba1842cd2cc691",
+				"64b5f6dce7ba1842cd2cf7eb",
+				"64b5fc05e7ba1842cd2d1560",
+				"64b5fce7e7ba1842cd2d1a3e",
+				"64b608eae7ba1842cd2d50a8",
+				"64b614bae7ba1842cd2d71c8",
+				"64b61b02e7ba1842cd2d7f9e",
+				"64b61d6803e0935bf08da19b"
+			],
+			"balance": -23500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T05:04:40.342Z",
+			"__v": 8
+		},
+		{
+			"_id": "64b3ca1c4b037e4387b3bd85",
+			"name": "이선영",
+			"purchases": [
+				"64b4d0d8e7ba1842cd2c7227",
+				"64b546e4e7ba1842cd2c7c44",
+				"64b5e640e7ba1842cd2ca360",
+				"64b5ed67e7ba1842cd2cccde",
+				"64b5efa3e7ba1842cd2cd93e",
+				"64b5f791e7ba1842cd2cfc73",
+				"64b607cfe7ba1842cd2d4c61",
+				"64b60ab8e7ba1842cd2d5753",
+				"64b60f10e7ba1842cd2d64ca",
+				"64b61ae9e7ba1842cd2d7f1d",
+				"64b61e6d03e0935bf08da2d8",
+				"64b61ed203e0935bf08da3a7"
+			],
+			"balance": -10500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T05:10:42.682Z",
+			"__v": 12
+		},
+		{
+			"_id": "64b3ca1e4b037e4387b3bd89",
+			"name": "이송하",
+			"purchases": [
+				"64b547dde7ba1842cd2c7cd9",
+				"64b5e212e7ba1842cd2c936b",
+				"64b5ebcbe7ba1842cd2cc489",
+				"64b5ed5ce7ba1842cd2ccc9a",
+				"64b61600e7ba1842cd2d747b",
+				"64b6193de7ba1842cd2d793f",
+				"64b61a37e7ba1842cd2d7cf4"
+			],
+			"balance": -5000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T04:51:03.014Z",
+			"__v": 7
+		},
+		{
+			"_id": "64b3ca244b037e4387b3bd9b",
+			"name": "이재훈",
+			"purchases": [
+				"64b5f256e7ba1842cd2ce6d1",
+				"64b5f2ece7ba1842cd2ce970",
+				"64b5f780e7ba1842cd2cfbf1",
+				"64b5f7f2e7ba1842cd2cff6f",
+				"64b5fc1be7ba1842cd2d15f0",
+				"64b61170e7ba1842cd2d6bec",
+				"64b61a5ee7ba1842cd2d7d5a"
+			],
+			"balance": -5000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T04:51:42.501Z",
+			"__v": 7
+		},
+		{
+			"_id": "64b3ca344b037e4387b3bdc7",
+			"name": "조아인",
+			"purchases": [
+				"64b4c498e7ba1842cd2c6988",
+				"64b5e6f2e7ba1842cd2ca6d1",
+				"64b5ec66e7ba1842cd2cc79a",
+				"64b5f38ce7ba1842cd2ceb9b",
+				"64b5fc36e7ba1842cd2d16a4",
+				"64b6016be7ba1842cd2d2fc0",
+				"64b60bdde7ba1842cd2d5ad5"
+			],
+			"balance": -500,
+			"isSecurePurchase": false,
+			"securePurchaseEndDate": "2023-07-18T03:49:49.960Z",
+			"__v": 8
+		},
+		{
+			"_id": "64b3ca3c4b037e4387b3bddf",
+			"name": "최은재",
+			"purchases": [
+				"64b4c436e7ba1842cd2c6868",
+				"64b4c67fe7ba1842cd2c6cd6",
+				"64b5e657e7ba1842cd2ca410",
+				"64b5ebf6e7ba1842cd2cc5bc",
+				"64b5fb74e7ba1842cd2d1274",
+				"64b5fbfae7ba1842cd2d1503",
+				"64b60010e7ba1842cd2d2998",
+				"64b606d3e7ba1842cd2d47d1",
+				"64b608bfe7ba1842cd2d500a",
+				"64b60962e7ba1842cd2d5274",
+				"64b60ab3e7ba1842cd2d5722",
+				"64b610b2e7ba1842cd2d69e1",
+				"64b61af7e7ba1842cd2d7f50",
+				"64b61c03e7ba1842cd2d8187"
+			],
+			"balance": -5000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T04:58:43.973Z",
+			"__v": 15
+		},
+		{
+			"_id": "64b3ca414b037e4387b3bded",
+			"name": "한재호",
+			"purchases": [
+				"64b5463be7ba1842cd2c7b22",
+				"64b5e469e7ba1842cd2c9b05",
+				"64b5e727e7ba1842cd2ca839",
+				"64b5ee4ee7ba1842cd2cd1cd",
+				"64b5f5fee7ba1842cd2cf454",
+				"64b5f89be7ba1842cd2d0319",
+				"64b5f8c0e7ba1842cd2d036d",
+				"64b5fbd9e7ba1842cd2d1426",
+				"64b5ff70e7ba1842cd2d276e",
+				"64b601dbe7ba1842cd2d31ee",
+				"64b612b8e7ba1842cd2d6eff",
+				"64b61a1ce7ba1842cd2d7c7a"
+			],
+			"balance": -500,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T04:50:36.189Z",
+			"__v": 12
+		},
+		{
+			"_id": "64b57125996ab5c71797bf92",
+			"name": "정선희",
+			"purchases": [
+				"64b5fcb4e7ba1842cd2d1965"
+			],
+			"balance": -12000,
+			"isSecurePurchase": true,
+			"securePurchaseEndDate": "2023-07-18T02:45:08.663Z",
+			"__v": 1
+		}
+	]
+}
